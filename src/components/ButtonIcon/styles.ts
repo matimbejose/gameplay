@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     iconWrapper: {
         width: 56,
         height: 56,
+        alignItems: 'center',
         justifyContent: 'center',
         borderRightWidth: 1,
         borderColor: theme.colors.line
