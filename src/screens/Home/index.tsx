@@ -7,11 +7,13 @@ import { styles } from "./styles";
 import { useState } from "react";
 import { ListHeader } from "../../components/ListHeader";
 import { Appointment } from "../../components/Appointment";
+import { ListDivider } from "../../components/ListDivider";
 
 
 export function Home() {
     const [ category, setCategory ] = useState(''); 
-    const appointments = [ {
+    const appointments = [
+  {
         id: '1',
         guild: {
             id: '1',
@@ -21,8 +23,21 @@ export function Home() {
         },
         category: '1',
         date: '22/10 as 16:30',
-        desciption: 'E hoje que vamos challenger sem perder um partida na rua md10'
-    }]
+        description: 'E hoje que vamos challenger sem perder um partida na rua md10'
+    },
+    {
+    id: '2',
+    guild: {
+        id: '1',
+        name: 'Lendarios',
+        icon: null,
+        owner: true
+    },
+    category: '1',
+    date: '22/10 as 16:30',
+    description: 'E hoje que vamos challenger sem perder um partida na rua md10'
+}
+]
 
     function handleCategorySelect(categoryId: string) {
         categoryId === category ? setCategory('') :setCategory(categoryId);
@@ -34,12 +49,12 @@ export function Home() {
               <Profile />
               <ButtonAdd />
           </View>
-          <View>
+
               <CategorySelect
               CategorySelected={category}
               setCategory={handleCategorySelect}
-              
               />
+
               <View style={styles.content}>
                   <ListHeader
                   title="Partidas agendadas"
@@ -49,11 +64,13 @@ export function Home() {
                   data={appointments}
                   keyExtractor={item => item.id}
                   renderItem={({ item })=> (
-                      <Appointment data={item} />
-                       )}
+                      <Appointment data= {item} />
+                      )}
+                      ItemSeparatorComponent={() => <ListDivider /> }
+                      style={styles.matches}
+                      showsVerticalScrollIndicator={false}
                       />
               </View>
           </View>
-      </View>
     );
 }
