@@ -12,9 +12,7 @@ export function Profile() {
                 <Text style={styles.greeting}>
                       ola,
                      </Text>
-                     <View>
-                         
-                     </View>
+                    
                      <Text style={styles.username}>
                              Matimbe
                     </Text>

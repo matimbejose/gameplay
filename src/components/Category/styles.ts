@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
         fontSize: 15 
     },
     check: {
-        width: 15,
+        width: 12,
         height: 12,
         backgroundColor: theme.colors.secondary100,
         alignSelf: 'flex-end',
@@ -35,9 +35,9 @@ export const styles = StyleSheet.create({
         borderRadius: 3
     },
     checked: {
-        width: 15,
-        height: 12,
-        backgroundColor: theme.colors.secondary100,
+        width: 10,
+        height: 10,
+        backgroundColor: theme.colors.primary,
         alignSelf: 'flex-end',
         marginRight: 7,
     }
