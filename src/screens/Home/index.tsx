@@ -47,25 +47,22 @@ export function Home() {
     }
     function handleAppointmentDetails() {
         navigation.navigate('AppointmentDetails');
-
     }
 
     return(
-      <Background>
+        <Background>
           <View style={styles.header}>
               <Profile />
               <ButtonAdd />
           </View>
 
-             
+             <CategorySelect
+                CategorySelected={category}
+                setCategory={handleCategorySelect}
+              />
 
               <View style={styles.content}> 
-              
-              <CategorySelect
-              CategorySelected={category}
-              setCategory={handleCategorySelect}
-              />
-                  <ListHeader
+                <ListHeader
                   title="Partidas agendadas"
                   subtitle="Total 6"
                   />
