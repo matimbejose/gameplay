@@ -9,6 +9,7 @@ import { ButtonIcon } from "../../components/ButtonIcon";
 import IlustrationImg from '../../assets/illustration.png';
 import { styles } from "./styles";
 import { useNavigation } from "@react-navigation/native";
+import { Background } from '../../components/Background';
 
 export function SignIn() {
 const navigation = useNavigation();
@@ -17,6 +18,7 @@ const navigation = useNavigation();
         navigation.navigate('Home');
     }
     return (
+        <Background>
         <View style={styles.container}>
             <Image source={IlustrationImg}
             style={styles.image}
@@ -41,5 +43,7 @@ const navigation = useNavigation();
                  />
             </View>
         </View>
-    );
+        </Background>
+    ); 
+     
 }
