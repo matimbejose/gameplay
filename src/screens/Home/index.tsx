@@ -48,12 +48,16 @@ export function Home() {
     function handleAppointmentDetails() {
         navigation.navigate('AppointmentDetails');
     }
+    function handleAppointmentCreate() {
+        navigation.navigate('AppointmentCreate');
+    }
+
 
     return(
         <Background>
           <View style={styles.header}>
               <Profile />
-              <ButtonAdd />
+              <ButtonAdd onPress={handleAppointmentCreate} />
           </View>
 
              <CategorySelect
@@ -66,21 +70,21 @@ export function Home() {
                   title="Partidas agendadas"
                   subtitle="Total 6"
                   />
-              
-                  <FlatList 
-                  data={appointments}
-                  keyExtractor={item => item.id}
-                  renderItem={({ item })=> (
-                      <Appointment data= {item}
-                      onPress={handleAppointmentDetails}
-                      
-                      />
-                      )}
-                      ItemSeparatorComponent={() => <ListDivider /> }
-                      style={styles.matches}
-                      showsVerticalScrollIndicator={false}
-                      />
-              </View>
+                
+                    <FlatList 
+                    data={appointments}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item })=> (
+                        <Appointment data= {item}
+                        onPress={handleAppointmentDetails}
+                        
+                        />
+                        )}
+                        ItemSeparatorComponent={() => <ListDivider /> }
+                        style={styles.matches}
+                        showsVerticalScrollIndicator={false}
+                        />
+                </View>
           </Background>
     );
 }
